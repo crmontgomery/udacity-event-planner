@@ -4,10 +4,10 @@
 defined("PUBLIC_PATH")
     or define("PUBLIC_PATH", realpath(dirname(__FILE__) . '../../public'));
 
-$projectTitle = 'event-planner'; //must be lower case
-
 // URL's
-define('URL', 'http://' . $projectTitle . '.dev/');
+// Needs to be changed to whatever the address where the folder is located
+// This can be either a domain i.g. www.domain.com or local i.g. localhost/foldername
+define('URL', 'http://PATH_TO_YOUR_REPOSITORY/'); 
 define('PUBLIC_URL', URL . 'public/');
 define('UPLOADS_URL', URL . 'data/uploads/');
 define('APP_URL', URL . 'app/');

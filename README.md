@@ -1,5 +1,5 @@
 # Version/Demo
-1.0.1-Alpha: Live Demo: [www.coreymontgomery.com](htttp://www.coreymontgomery.com).
+1.0.2-Alpha: Live Demo: [www.coreymontgomery.com](htttp://www.coreymontgomery.com).
 
 # Udacity: Event Planner
 A basic event planner to showcase user experience.
@@ -20,7 +20,8 @@ Local server or Live server: I currentlty use [AMPPS](http://www.ampps.com/). It
 ##Database Setup
 1. Download or clone the git repository
 2. To setup the database run the sql code from _install/install.sql file. This file will create the database and all necessary tables within it.
-3. You will need to change the database login credentials in the dist/app/config.php file.  
+3. You will need to change the database login credentials in the dist/app/config.php file.
+4. You will also need to change the URL constant in the dist/app/config.php file.  All url's for project resources are based off of this.
 
 ##Development
 1. In windows (not sure on Mac) open the folder where the repository is found (all the files are displayed). 
@@ -73,6 +74,10 @@ Google Material Guidelines (some of them)
 Materializecss for the colors
 
 #Changelog
+###5/9/16 1.0.2-Alpha
+* Added installation instructions.
+* Changed url config setup.
+
 ###5/8/16 1.0.1-Alpha
 * Fixed issues with .htaccess file when deploying on a server.
 * FIxed an error associated with strict validation and PHP during login
