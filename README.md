@@ -17,7 +17,7 @@ PHP 5 >= 5.5 (Password Hash, used to have fallback, may add back in. TODO?)
 Local server or Live server: I currentlty use [AMPPS](http://www.ampps.com/). It is a little bloated, but very easy to use and setup mock domains.
 
 # Installation
-##Database Setup
+##Conifiguration Setup (Database/URL's)
 1. Download or clone the git repository
 2. To setup the database run the sql code from _install/install.sql file. This file will create the database and all necessary tables within it.
 3. You will need to change the database login credentials in the dist/app/config.php file.
