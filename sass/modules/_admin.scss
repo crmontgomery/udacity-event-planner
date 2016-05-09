@@ -1,0 +1,55 @@
+#manage-option {
+  color: #fff;
+  padding: 30px;
+
+  a:link,
+  a:visited {
+    color: #fff;
+  }
+}
+
+.user-row {
+  margin: 0 0 15px 0;
+}
+
+.user-box {
+  @extend .red;
+  color: #fff;
+  padding: 10px;
+
+  a:link,
+  a:visited {
+    display: block;
+    color: #fff;
+  }
+
+  a:hover {
+    @extend .red-text.text-lighten-3;
+  }
+}
+
+.user-real-name {
+  span {
+    font-size: 1.5em;
+  }
+}
+
+.user-details {
+  @extend .red-text.text-lighten-4;
+}
+
+#modal-user {
+  $height: 600px;
+  $width: 800px;
+  $color-start: rgba(77,77,74,1);
+  $color-stop: rgba(46,43,40,1);
+  @include modal($height, $width, $color-start, $color-stop);
+}
+
+#modal-edit-password {
+  $height: 200px;
+  $width: 800px;
+  $color-start: rgba(77,77,74,1);
+  $color-stop: rgba(46,43,40,1);
+  @include modal($height, $width, $color-start, $color-stop);
+}

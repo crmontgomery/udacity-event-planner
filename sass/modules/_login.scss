@@ -1,0 +1,55 @@
+#body-bg {
+  //@extend .purple.darken-3;
+  width: 40%;
+}
+
+#login-header {
+  color: #fff;
+  margin-top: 50px;
+}
+
+#login-container {
+  label {
+    color: #fff;
+  }
+  input {
+    @extend .purple.darken-4;
+    color: #fff;
+    font-size: 12pt;
+    margin: 0 0 16px 0;
+    padding: 10px;
+  }
+}
+
+#btn-sign-in,
+#btn-sign-up,
+#btn-cancel-registration,
+#btn-submit-registration {
+  width: 100%;
+}
+
+#btn-sign-in {
+  
+}
+
+#btn-sign-up,
+#btn-cancel-registration {
+  background-color: transparent !important;
+  border: 1px solid #ba68c8;
+  color: #fff;
+  transition: background-color .5s ease;
+}
+
+#btn-sign-up:hover,
+#btn-cancel-registration:hover {
+  background-color: #ba68c8 !important;
+  border: 1px solid #ba68c8;
+  color: #fff;
+}
+
+
+#sign-up-container {
+  display: none;
+}
+
+
