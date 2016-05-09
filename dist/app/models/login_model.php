@@ -30,8 +30,9 @@ class Login_Model extends Model {
         Session::set('lastName', $data['lastName']);
         Session::set('email', $data['email']);
 
+        $date = date('Y-m-d H:i:s');
         $insert = $this->db->prepare('INSERT INTO userLog (loginDateTime, user_id) VALUES (:loginDateTime, :id)');
-        $insert->bindParam(':loginDateTime', date('Y-m-d H:i:s'));
+        $insert->bindParam(':loginDateTime', $date);
         $insert->bindParam(':id', $data['id']);
         $insert->execute();
         

@@ -19,8 +19,14 @@ class Admin extends Controller
 
 	function index()
 	{
-		$this->view->title = $this->className;
-		$this->view->render($this->className . '/index');
+		if(Session::get('role') == 4){
+			$this->view->title = $this->className;
+			$this->view->render($this->className . '/index');
+		} else {
+			header('location: ' . URL);
+			exit;
+		}
+		
 	}
 
 	function users($id = null)

@@ -21,5 +21,5 @@ define('DB_USER', 'root'); // your database username
 define('DB_PASS', 'mysql'); // your database password
 
 //Version
-define('VER', '1.0.0-Alpha');
+define('VER', '1.0.1-Alpha');
 define('PROJECT_NAME', 'Udacity: Event Planner');

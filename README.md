@@ -1,5 +1,5 @@
 # Version/Demo
-1.0.0-Alpha: Live demo on its way.
+1.0.1-Alpha: Live Demo: [www.coreymontgomery.com](www.coreymontgomery.com).
 
 # Udacity: Event Planner
 A basic event planner to showcase user experience.
@@ -71,4 +71,8 @@ Stack Overflow.
 Google Material Guidelines (some of them)
 
 Materializecss for the colors
- 
+
+#Changelog
+###5/8/16 1.0.1-Alpha
+* Fixed issues with .htaccess file when deploying on a server.
+* FIxed an error associated with strict validation and PHP during login
