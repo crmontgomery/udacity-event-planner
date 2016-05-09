@@ -1,5 +1,5 @@
 # Version/Demo
-1.0.2-Alpha: Live Demo: [www.coreymontgomery.com](htttp://www.coreymontgomery.com).
+1.0.2-Alpha: Live Demo: [www.coreymontgomery.com](coreymontgomery.com).
 
 # Udacity: Event Planner
 A basic event planner to showcase user experience.
