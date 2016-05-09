@@ -1,5 +1,5 @@
-# Version
-1.0.0-Alpha
+# Version/Demo
+1.0.0-Alpha: Live demo on its way.
 
 # Udacity: Event Planner
 A basic event planner to showcase user experience.
