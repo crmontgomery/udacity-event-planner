@@ -1,5 +1,15 @@
 // Reference: Breakpoints are from the Google Material Design Guidelines
 
+@media (max-width: 600px) {
+  #modal-event {
+    height: 900px !important;
+    .col-6-12 {
+      border-left: 1px solid darken(#ccc, 60%) !important;
+      width: 100%;
+    }
+  }
+}
+
 // Tablet portrait
 @media (max-width: 720px) {
   .container {
@@ -81,6 +91,8 @@
   
 }
 
+
+
 //Desktop
 // Window large
 @media (min-width: 960px) {
@@ -92,13 +104,4 @@
     clear: right;
     margin-right: 0;
   }
-  // [id*='event-row-'] {
-    
-  //   [id*='event-wrapper-']:nth-child(3n) {
-  //     background-color: red;
-  //     clear: right;
-  //     margin-right: 0;
-  //   }
-
-  // }
 }

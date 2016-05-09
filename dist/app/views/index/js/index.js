@@ -233,7 +233,7 @@ $(document).ready(function(){
     }
     
     $('#form-new-user').on('keyup', function(e){
-        console.log(signUpValid);    
+          
     });
     
     // Submit new user form

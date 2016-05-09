@@ -2449,6 +2449,13 @@ label {
   height: 1px;
   width: 100%; }
 
+@media (max-width: 600px) {
+  #modal-event {
+    height: 900px !important; }
+    #modal-event .col-6-12 {
+      border-left: 1px solid #333333 !important;
+      width: 100%; } }
+
 @media (max-width: 720px) {
   [id*='event-row-'] [id*='event-wrapper-'] {
     clear: both;
