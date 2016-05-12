@@ -3,7 +3,7 @@
 <html lang="eng">
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="description" content= />
+        <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="author" content="Duellogic" />
         <meta content="no-cache" />
