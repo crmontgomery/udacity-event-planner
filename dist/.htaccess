@@ -5,3 +5,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+#enable the below to redirect www.mydomain.com to mydomain.com (change mydomain to your domain)
+#RewriteCond %{HTTP_HOST} !^mydomain.com [NC]
+#RewriteRule ^/?(.*)$ http://mydomain.com/$1 [L,R=301]

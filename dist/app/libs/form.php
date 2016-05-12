@@ -4,6 +4,7 @@ require '/form/val.php';
 
 class Form
 {
+    // TODO: Redo or get rid of.
     private $_currentItem = null;
     private $_postData = array();
     private $_val = array();

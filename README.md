@@ -1,5 +1,5 @@
 # Version/Demo
-1.0.2-Alpha: Live Demo: [www.coreymontgomery.com](coreymontgomery.com).
+2.0.0-Alpha: Live Demo: [www.coreymontgomery.com](coreymontgomery.com).
 
 # Udacity: Event Planner
 A basic event planner to showcase user experience.
@@ -32,23 +32,12 @@ Local server or Live server: I currentlty use [AMPPS](http://www.ampps.com/). It
 4. After the dependencies are installed, type 'gulp' without quotes (Must have GilpJs installed).
 5. Gulp will now be watching the Sass files and the primary JavaScript (app.js) file. Gulp takes care of converting the Sass and combining any extra JavaScript files. For this there is only one.
 
-###Note
-1. The main directory is the working directory.
-2. All CSS is generated from the Sass files in the main directory under sass. 
-3. app.js should only  be edited from this directory. 
-4. Individual pages/modules of the program have their own JavaScript directories within the dist/views folder (Might change).
-5. Sass/CSS for all pages/modules, however, remains in the Sass folder in the working directory.
-5. Still learning. So much of this will probably change.
-
 ##Deployment
 1. Copy the 'dist' folder to the server. Localhost or online.
 2. 'dist' acts as the root folder and domains should point to it.
 3. If the database has already been setup and is in working order, everything is good to go.
 
 # Some known issues
-Spacing on files is off.  Switched editors half way through programming.
-
-JavaScript is a hot mess. Needs to be cleaned up a lot.
 
 Color scheme is all over the place.
 
@@ -56,10 +45,8 @@ Validation messages are ugly.
 
 Better solution to the media query/javascript hacks
 
-Adding events has some minor comsetic issues from the dynamic content.  Will be fixing asap.
-
-##Sign up form: 
 Email validation shows green when empty.
+
 If use tries to submit the form before changing focus, it will not prompt the user the email is being used.
 
 # References/Credits
@@ -74,6 +61,13 @@ Google Material Guidelines (some of them)
 Materializecss for the colors
 
 #Changelog
+###5/12/16 2.0.0-Alpha
+* Began changes in moving JavaScript files out of the view and into the development area
+* Added [gulp-uglify.js](https://www.npmjs.com/package/gulp-uglify) to minify JavaScript files.
+* Changed the Gulp file to minify all Sass on export to css.
+* Converted all relevent files to the proper spacing and indentation
+* Changed the way events are added. The page is now refreshed instead of added dynamically.
+
 ###5/9/16 1.0.2-Alpha
 * Added installation instructions.
 * Changed url config setup.

@@ -20,7 +20,7 @@ class Index extends Controller
         $this->events_model = new Events_Model();
 
         $this->className = strtolower(__CLASS__);
-    	$this->view->js = array($this->className . '/js/' . $this->className);
+    	//$this->view->js = array($this->className . '/js/' . $this->className);
 	}
 
 	function index()

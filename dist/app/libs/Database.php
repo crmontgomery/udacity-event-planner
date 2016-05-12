@@ -5,7 +5,6 @@ class Database extends PDO
 
 	public function __construct($DB_TYPE, $DB_HOST, $DB_HOST, $DB_NAME, $DB_USER, $DB_PASS) {
 		parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS);
-
 		parent::setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 
@@ -33,7 +32,7 @@ class Database extends PDO
 	{
 		try {
 			ksort($data);
-			$fieldNames = '`' . implode('`, `', array_keys($data)) . '`';
+			$fieldNames  = '`' . implode('`, `', array_keys($data)) . '`';
 			$fieldValues = ':' . implode(', :', array_keys($data));
 
 			$insert = $this->prepare("INSERT INTO $table ($fieldNames) VALUES ($fieldValues)");
@@ -58,7 +57,7 @@ class Database extends PDO
 		}
 
 		$fieldDetails = rtrim($fieldDetails, ', ');
-		$update = $this->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+		$update       = $this->prepare("UPDATE $table SET $fieldDetails WHERE $where");
 
 		foreach($data as $key => $value) {
 			$update->bindValue($key, $value);

@@ -15,6 +15,7 @@ class Dashboard extends Controller {
 		$this->view->render('dashboard/index');
 	}
 
+	// TODO: Move to login controller
 	function logout() {
 		Session::destroy();
 		header('location: ../');

@@ -19,8 +19,6 @@ class Session {
 	}
 
 	public static function destroy() {
-		//unset($_SESSION);
-
 		session_destroy();
 	}
 }

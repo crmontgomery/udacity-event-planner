@@ -83,7 +83,7 @@ class User_Model extends Model {
             $results = $this->db->select($sql, $data);
             
             if(!empty($results)){
-                header('HTTP/1.1 500 Internal Server Error');
+                header('HTTP/1.1 500 Internal Server Error: Email');
                 header('Content-Type: application/json; charset=UTF-8');
                 die(json_encode(array('Sorry, please choose another email.' => 'ERROR', 'code' => 0117)));
             }
@@ -102,12 +102,12 @@ class User_Model extends Model {
             $table = 'user';
             $data = array(
                     'id' => $userId,
-                    'username' => $_POST['username'],
-                    'firstName' => $_POST['firstName'],
-                    'lastName' => $_POST['lastName'],
-                    'email' => $_POST['email'],
-                    'phone' => $_POST['phone'],
-                    'active' => $_POST['active'],
+                    'username'   => $_POST['username'],
+                    'firstName'  => $_POST['firstName'],
+                    'lastName'   => $_POST['lastName'],
+                    'email'      => $_POST['email'],
+                    'phone'      => $_POST['phone'],
+                    'active'     => $_POST['active'],
                     'userRoleId' => $_POST['role']
                     );
             $where = 'id = :id ';
@@ -125,7 +125,7 @@ class User_Model extends Model {
         try {
             $table = 'user';
             $data = array(
-                    'id' => $userId,
+                    'id'       => $userId,
                     'password' => $password,
                     );
             $where = 'id = :id';
@@ -139,6 +139,6 @@ class User_Model extends Model {
     // Delete
     function deleteUser()
     {
-
+        // TODO: Add functionality for admin
     }
 }

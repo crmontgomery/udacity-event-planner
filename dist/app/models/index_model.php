@@ -9,12 +9,7 @@ class Index_Model extends Model
     }
 
     // Create
-    
-
     // Read
-
     // Update
-
     // Delete
-    
 }

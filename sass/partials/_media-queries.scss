@@ -91,8 +91,6 @@
   
 }
 
-
-
 //Desktop
 // Window large
 @media (min-width: 960px) {
@@ -103,5 +101,27 @@
   .grid-clear-right-lg {
     clear: right;
     margin-right: 0;
+  }
+}
+
+// Height media queries for modals
+// Sign Up Modal
+@media (max-height: 800px) {
+  #modal-event {
+    bottom: auto;
+  }
+}
+
+// Sign In Modal
+@media (min-width: 600px) {
+  #modal-sign-up {
+    bottom: auto;
+  }
+}
+
+// Event-modal
+@media (min-width: 400px) {
+  #modal-login {
+    bottom: auto;
   }
 }

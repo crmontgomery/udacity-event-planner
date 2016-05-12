@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    
-  
+    //Empty
 });
 
 // Standard POST operation
