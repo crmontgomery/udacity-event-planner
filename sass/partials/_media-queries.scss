@@ -106,21 +106,21 @@
 
 // Height media queries for modals
 // Sign Up Modal
-@media (max-height: 800px) {
+@media (max-height: 721px) {
   #modal-event {
     bottom: auto;
   }
 }
 
 // Sign In Modal
-@media (min-width: 600px) {
+@media (max-height: 581px) {
   #modal-sign-up {
     bottom: auto;
   }
 }
 
 // Event-modal
-@media (min-width: 400px) {
+@media (max-height: 351px) {
   #modal-login {
     bottom: auto;
   }

@@ -9,7 +9,7 @@
         <meta content="no-cache" />
         <!-- http://stackoverflow.com/questions/26888751/chrome-device-mode-emulation-media-queries-not-working -->
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title><?php echo (isset($this->title)) ? $this->title : 'EP9k'; ?></title>
