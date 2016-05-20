@@ -7,8 +7,8 @@ defined("PUBLIC_PATH")
 // URL's
 // Needs to be changed to whatever the address where the folder is located
 // This can be either a domain i.g. www.domain.com or local i.g. localhost/foldername
-define('URL', 'http://YOUR_PATH_HERE/'); 
-//define('URL', 'http://event-planner.dev/'); 
+//define('URL', 'http://YOUR_PATH_HERE/'); 
+define('URL', 'http://event-planner.dev/'); 
 define('PUBLIC_URL', URL . 'public/');
 define('UPLOADS_URL', URL . 'data/uploads/');
 define('APP_URL', URL . 'app/');

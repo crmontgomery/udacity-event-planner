@@ -59,23 +59,3 @@ Stack Overflow.
 Google Material Guidelines (some of them)
 
 Materializecss for the colors
-
-#Changelog
-###5/15/16 2.0.1-Alpha
-* Fixed issue with modals not scrolling if the height of the page was smaller than the modal itself if width media queries were not triggered.
-* Updated live site to handle the inclusion or omission of "www."
-
-###5/12/16 2.0.0-Alpha
-* Began changes in moving JavaScript files out of the view and into the development area
-* Added [gulp-uglify.js](https://www.npmjs.com/package/gulp-uglify) to minify JavaScript files.
-* Changed the Gulp file to minify all Sass on export to css.
-* Converted all relevent files to the proper spacing and indentation
-* Changed the way events are added. The page is now refreshed instead of added dynamically.
-
-###5/9/16 1.0.2-Alpha
-* Added installation instructions.
-* Changed url config setup.
-
-###5/8/16 1.0.1-Alpha
-* Fixed issues with .htaccess file when deploying on a server.
-* FIxed an error associated with strict validation and PHP during login
