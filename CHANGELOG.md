@@ -1,5 +1,10 @@
 #Changelog
-###2016/05/19 [unreleased]
+
+###[unreleased]
+####TODO
+* Fix the email validation message
+* Fix all validation messages to show up on mobile
+
 ####Added
 * Enabled Gzip in the .htaccess to compress file sizes. [Gift of Speed: enable Gzip](https://www.giftofspeed.com/enable-gzip-compression/)
 
@@ -7,10 +12,15 @@
 * Created a new changelog file and migrated original from the README.
 * Changed the file structure to better separate the source files from the distribution files.
 * Changed the formatting of the changelog to better reflect best practices.
+* Lowered the required characters for password creation
 
 ####Deprecated
 ####Removed
 ####Fixed
+* When the user closes a form before submission, it will reset the visual validation indicators.
+* When the user leaves the email field blank, it will alert the user visually.
+* If the user does not put in a valid email address, it will alert the user visually.
+
 ####Security
 
 ###2016/05/15 2.0.1-Alpha

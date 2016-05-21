@@ -1,0 +1,37 @@
+#alert-container {
+  background-color: #b71c1c;
+  color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  transition: top .5s;
+  z-index: 2000;
+  
+  i {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
+  
+  span:nth-child(2){
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+  
+  button {
+    background-color: transparent !important;
+    color: #ccc;  
+    margin-left: 10px;
+    padding: 0;
+    transition: color .5s;
+    vertical-align: middle;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+}

@@ -16,3 +16,8 @@
         <link href="<?php echo PUBLIC_URL  . 'css/stylesheet.css?' . date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div id="alert-container">
+            <div class="container text-center">
+                <span><i class="material-icons">error</i></span><span class="message">Your end date is before your start date.</span><span><button type="button" id="btn-alert-close">close</button></span>
+            </div>
+        </div>

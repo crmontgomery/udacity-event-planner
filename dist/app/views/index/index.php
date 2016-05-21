@@ -174,7 +174,10 @@
                             <span class="float-right" id="label-validation">
                                 <span class="fail">!</span>
                             </span>
-                            <input type="text" name="type" id="ip-type" placeholder="What type of event is this?" required />
+                            <input list="events" type="text" name="type" id="ip-type" placeholder="What type of event is this?" required />
+                            <datalist id="events">
+                                <option data-value="1" value="Party">
+                            </datalist>
                         </label>
                     </div>
                     <div class="col-6-12 reset">
@@ -276,7 +279,7 @@
                             <span class="fail" id="lower">a</span>
                             <span class="fail" id="num">0-9</span>
                             <span class="fail" id="symbol">!&?</span> 
-                            <span class="fail" id="length">16+</span>
+                            <span class="fail" id="length">6+</span>
                         </span>
                         <input type="password" name="password" id="ip-user-pass" placeholder="Super Password" required/>
                     </label>
