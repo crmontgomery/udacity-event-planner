@@ -1,9 +1,3 @@
-<html>
-	<head>
-
-	</head>
-	<body>
-	<?php echo $this->msg; ?>
-
-	</body>
-</html>
+<div class="container">
+	<p>Error: <?=$this->msg;?></p>
+</div>

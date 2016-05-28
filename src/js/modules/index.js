@@ -1,11 +1,12 @@
-$(document).ready(function(){
-    // Create an event, create a new user, and login
+
+$(document).ready(function(){    
+    // Launch modals
     $('#btn-create-event, #btn-sign-up, #btn-login').on('click', function(){
         var modal = $(this).attr('data-target');
         toggleModal(modal);
     });
 
-    // Keep form open
+    // Keep form open (disabled for this app)
     $('#btn-keep-open').on('click', function(){
         toggleKeepModalOpen(this);
     });
@@ -58,14 +59,12 @@ $(document).ready(function(){
             toggleRequired('#' + eventInputList['end'], false);
             eventValid['end'] = false;
             //$('#modal-event').find('#error-message span').text('The end date is the same or earlier than the start date.').fadeIn();
-            $('#alert-container .message').text('The end date is the same or earlier than the start date.');
-            console.log($('#alert-container').css('top') + ' ' + $('#alert-container').css('position'));
-            $('#alert-container').css({top: '0px', 'position': 'fixed'});
-            console.log($('#alert-container').css('top') + ' ' + $('#alert-container').css('position'));
+            toggleAlert('The end date is the same of earlier than the start date.');
+            console.log('other wtf');
         } else {
             toggleRequired('#' + eventInputList['end'], true);
             eventValid['end'] = true;
-            $('#modal-event').find('#error-message span').fadeOut();
+            //$('#modal-event').find('#error-message span').fadeOut();
         }
     });
     
@@ -82,8 +81,6 @@ $(document).ready(function(){
             appendTo   = '#event-row-1',
             dataParsed = $(this).serializeArray();
             
-            //toggleModal('modal-event');
-
             $.post(url, data, function(){
                 // Empty default
             }).success(function(id){
@@ -96,7 +93,7 @@ $(document).ready(function(){
                 // TODO: Create fail doodad
             });
         } else {
-            $('#modal-event').find('#error-message span').text('Please ensure that all fields are correctly filled out.').fadeIn();
+            toggleAlert('Please ensure that all fields are correctly filled out.');
         }
         
     });
@@ -126,7 +123,6 @@ $(document).ready(function(){
        }
     });
     
-
     // Validate the email address being used
     $('#ip-user-email').on('blur', function(){
         if($(this).val() == ''){
@@ -143,11 +139,11 @@ $(document).ready(function(){
                 // Refreshes the page
                 signUpValid['email'] = true;
                 toggleRequired('#ip-user-email', true);
-                $('#modal-sign-up').find('#error-message span').fadeOut();
+                
             }).fail(function(fail) {
                 // failure will notify the user
                 signUpValid['email'] = false;
-                $('#modal-sign-up').find('#error-message span').text('That email already exists.').fadeIn();
+                toggleAlert('That email already exists.');
                 toggleRequired('#ip-user-email', false);
             });
         }
@@ -238,9 +234,9 @@ $(document).ready(function(){
     // Checks if the passwords match when user changes focus (TODO: merge with keyup...maybe remove keyup)
     $('#ip-user-pass-verify').on('blur', function(){
         if(requiredVerify('#ip-user-pass-verify')){
-            $('#modal-sign-up').find('#error-message span').fadeOut();
+            
         } else {
-            $('#modal-sign-up').find('#error-message span').text('The passwords do not match.').fadeIn();
+            toggleAlert('The passwords do not match.'); 
         }
     });
     
@@ -289,7 +285,7 @@ $(document).ready(function(){
                 // TODO: Create fail doodad
             });
         } else {
-            $('#modal-sign-up').find('#error-message span').text('Please ensure all fields are correctly filled out.').fadeIn();
+            toggleAlert('Please ensure all fields are correctly filled out.');
         }
 
     });
@@ -327,7 +323,8 @@ $(document).ready(function(){
             window.location = url;
         }).fail(function(fail) {
             // failure will notify the user
-            $('#modal-login').find('#error-message span').fadeIn();
+           toggleAlert();
+            
         });
     });
     
@@ -409,6 +406,136 @@ var requiredVerify = function(item)
     }
 }
 
-var toggleAlert = function(msg){
-    
+// var toggleAlert = function(message){
+//     var msg = (message != '') ? message : '',
+//         alert = $('#alert-container'),
+//         msgContainer = $('#alert-container .message');
+        
+//     if(alert.data('alert-status') == 'closed'){
+//         msgContainer.text(msg);
+//         alert.css({top: '0px', 'position': 'fixed'});
+//         alert.data('alert-status', 'open');
+//     } else {
+//         alert.animate({
+//             top: "-200",
+//             position: 'absolute'
+//         }, 500, function() {
+//             // empty
+//         });
+//         alert.data('alert-status', 'closed'); 
+//     } 
+// }
+
+var toggleAlert = function(message){
+    var msg = (message != '') ? message : '',
+        alert = $('#alert-container'),
+        msgContainer = $('#alert-container .message');
+        
+    if(alert.data('alert-status') == 'closed'){
+        console.log('WTF?');
+        msgContainer.text(msg);
+        alert.css({top: '0px', 'position': 'fixed'});
+        alert.data('alert-status', 'open');
+        
+        alert.delay(3000).animate({
+            top: "-200",
+            position: 'absolute'
+        }, 1000);
+        alert.data('alert-status', 'closed'); 
+    }
 }
+
+// TODO REVISIT AND SHAME!
+// var alertArray = ['Error message 1.', 'Error message 2. At length and long.', 'Another message'];
+// console.log(alertArray);
+
+// var toggleAlert = function(message, state){
+//     var msg = (message != '') ? message : '',
+//         alert = $('#alert-container'),
+//         msgContainer = $('#alert-container .message');
+        
+//     if(alert.data('alert-status') == 'closed' && state == 'open'){
+//         // Append the message to the array
+//         alertArray.push(msg);   
+//         msgContainer.text(msg);
+//         // Open the alert
+//         alert.css({top: '0px', 'position': 'fixed'});
+//         alert.data('alert-status', 'open');
+//     } else if(alert.data('alert-status') == 'open' && state == 'open'){
+//         // Append the message to the array
+//         alertArray.push(msg);
+//         console.log(alertArray);
+        
+//         var alertLen = alertArray.length,
+//             currentNum = $('#alert-current'),
+//             totalNum = $('#alert-total');
+            
+//         currentNum.text(alertLen);
+//         totalNum.text(alertLen);
+//         // Show newest error in the alert
+//         msgContainer.text(msg);
+        
+//         alert.css({top: '0px', 'position': 'fixed'});
+//         alert.data('alert-status', 'open');
+        
+//     } else if(alert.data('alert-status') == 'open' && state == 'close'){
+//         // Remove the message from the array
+//         // If the message is the last one
+//             // Close the alert
+//         // Else 
+//             // Keep the alert open with the ramining message   
+//     } else {
+//         alert.animate({
+//             top: "-200",
+//             position: 'absolute'
+//         }, 500, function() {
+//             // empty
+//         });
+//         alert.data('alert-status', 'closed'); 
+//     } 
+// }
+
+// $(document).ready(function(){
+//     if(parseInt($('#alert-current').text()) == alertArray.length) {
+//             $('#btn-alert-next').prop('disabled', true);
+//             console.log('last');    
+//         } else if(parseInt($('#alert-current').text()) == 1) {
+//             console.log('first')
+//             $('#btn-alert-prev').prop('disabled', true);
+//         } else {
+//             $('#btn-alert-prev').prop('disabled', false);
+//             $('#btn-alert-next').prop('disabled', false);
+//         }
+    
+//     $('#btn-alert-prev, #btn-alert-next').on('click', function(){
+        
+//         if(parseInt($('#alert-current').text()) == alertArray.length) {
+//             $('#btn-alert-next').prop('disabled', true);
+//             console.log('last');    
+//         } else if(parseInt($('#alert-current').text()) == 1) {
+//             console.log('first')
+//             $('#btn-alert-prev').prop('disabled', true);
+//         } else {
+//             $('#btn-alert-prev').prop('disabled', false);
+//             $('#btn-alert-next').prop('disabled', false);
+//         }
+        
+//         var current = parseInt($('#alert-current').text()),
+//             msgContainer = $('#alert-container .message'),
+//             arrow = $(this).attr('data-alert-arrow');
+        
+//         if(arrow == 'next'){
+            
+//         } else if(arrow == 'prev' && current != 1){
+//             $('#alert-current').text(current - 1);
+//             msgContainer.text(alertArray[alertArray.length - 2]);
+//         }
+//     });
+// })
+
+// var changeMsg = function(){
+    
+// }
+
+
+

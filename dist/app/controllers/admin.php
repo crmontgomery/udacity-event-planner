@@ -26,7 +26,6 @@ class Admin extends Controller
 			header('location: ' . URL);
 			exit;
 		}
-		
 	}
 
 	function users($id = null)
@@ -50,13 +49,8 @@ class Admin extends Controller
     	$this->view->render($this->className . '/people');
 	}
 
-  private function test()
-  {
-
-  }
-
 	// Create
-	function addUser()
+	function _addUser()
 	{
 		$this->user_model->addUser();
 	}
@@ -67,24 +61,24 @@ class Admin extends Controller
 	//
 	// }
 
-	function getAllUsers()
+	function _getAllUsers()
 	{
 		$this->model->getAllUsers();
 	}
 
 	// Update
-	function updateUser()
+	function _updateUser()
 	{
-
+		echo 'Update User';
 	}
 
-	function updatePassword()
+	function _updatePassword()
 	{
 		$this->user_model->updatePassword();
 	}
 
 	// Delete
-	function deleteUser()
+	function _deleteUser()
 	{
 
 	}

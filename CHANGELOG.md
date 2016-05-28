@@ -4,6 +4,8 @@
 ####TODO
 * Fix the email validation message
 * Fix all validation messages to show up on mobile
+* Implement HTML minify-zation
+* Implement build vs dev gulp settings
 
 ####Added
 * Enabled Gzip in the .htaccess to compress file sizes. [Gift of Speed: enable Gzip](https://www.giftofspeed.com/enable-gzip-compression/)
@@ -13,6 +15,8 @@
 * Changed the file structure to better separate the source files from the distribution files.
 * Changed the formatting of the changelog to better reflect best practices.
 * Lowered the required characters for password creation
+* Updated the MVC routing system for security and better error handling.
+* Updated the readme to reflect all installation changes, and added better descriptions.
 
 ####Deprecated
 ####Removed
@@ -22,6 +26,8 @@
 * If the user does not put in a valid email address, it will alert the user visually.
 
 ####Security
+* Began implementing basic security measures to stop users from accessing controller methods that are meant for ajax/work.
+* Began implementing page settings defined by the administrator for users and their access levels.
 
 ###2016/05/15 2.0.1-Alpha
 * Fixed issue with modals not scrolling if the height of the page was smaller than the modal itself if width media queries were not triggered.

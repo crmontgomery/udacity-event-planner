@@ -139,7 +139,7 @@
     <!-- TODO: only print this code if the user is loged in -->
     <?php $modalName = 'modal-event';?>
     <div id="<?=$modalName;?>">
-        <form action="<?=URL;?>index/createEvent" method="post" id="form-new-event">
+        <form action="<?=URL;?>index/_createEvent" method="post" id="form-new-event">
             <div class="" id="modal-header">
                 <span id="modal-title">Create a new event</span>
                 <span id="modal-close"><button type="button" id="btn-modal-close" data-modal="<?=$modalName;?>"><i class="material-icons">close</i></button></span>

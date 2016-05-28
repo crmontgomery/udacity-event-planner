@@ -10,16 +10,9 @@ class Error extends Controller {
 		}
 	}
 
-	function index() {
-    $this->view->title = '404 Error';
-		$this->view->msg = 'Something went wrong';
-		$this->view->render('error/index', true);
-	}
-
-	function connection()
-	{
-		$this->view->title = 'Uh Oh!';
-		$this->view->msg = 'It looks like you are unable to connect to the database.  Please check your settings.';
-		$this->view->render('error/connection', false, true);
+	function index($msg = null) {
+		$this->view->title = '404 Error';
+		$this->view->msg = ($msg != null ? $msg : 'Something went wrong' );
+		$this->view->render('error/index', false, true);
 	}
 }
