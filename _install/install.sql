@@ -1,3 +1,7 @@
+-- -----------------------------------------------------
+-- Schema event-planner
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `event-planner` ;
 
 -- -----------------------------------------------------
 -- Schema event-planner
@@ -49,6 +53,19 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `event-planner`.`eventType`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `event-planner`.`eventType` ;
+
+CREATE TABLE IF NOT EXISTS `event-planner`.`eventType` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` TEXT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `event-planner`.`event`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `event-planner`.`event` ;
@@ -56,7 +73,6 @@ DROP TABLE IF EXISTS `event-planner`.`event` ;
 CREATE TABLE IF NOT EXISTS `event-planner`.`event` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` TEXT NULL,
-  `eventType` TEXT NULL,
   `location` TEXT NULL,
   `host` VARCHAR(255) NULL,
   `startDateTime` DATETIME NULL,
@@ -64,12 +80,19 @@ CREATE TABLE IF NOT EXISTS `event-planner`.`event` (
   `message` TEXT NULL,
   `guests` TEXT NULL,
   `user_id` INT NOT NULL,
+  `eventType_id` INT NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_event_user1_idx` (`user_id` ASC),
+  INDEX `fk_event_eventType1_idx` (`eventType_id` ASC),
   CONSTRAINT `fk_event_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `event-planner`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_event_eventType1`
+    FOREIGN KEY (`eventType_id`)
+    REFERENCES `event-planner`.`eventType` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -103,6 +126,21 @@ INSERT INTO `event-planner`.`userRole` (`id`, `name`, `description`) VALUES (1, 
 INSERT INTO `event-planner`.`userRole` (`id`, `name`, `description`) VALUES (2, 'Contributor', 'Read and write access');
 INSERT INTO `event-planner`.`userRole` (`id`, `name`, `description`) VALUES (3, 'Admin', 'Access to everything');
 INSERT INTO `event-planner`.`userRole` (`id`, `name`, `description`) VALUES (4, 'Overlord', 'Title given to the creator');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `event-planner`.`eventType`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `event-planner`;
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (1, 'Party');
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (2, 'Conference');
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (3, 'Birthday Party');
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (4, 'Presentation');
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (5, 'Concert');
+INSERT INTO `event-planner`.`eventType` (`id`, `name`) VALUES (6, 'Show');
 
 COMMIT;
 

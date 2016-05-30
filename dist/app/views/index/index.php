@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-12-12 event-meta">
                             <div class="event-type-host">
-                                <span class="event-type">A ' . $event['eventType'] . ',</span> <span>Hosted by</span> <span class="event-host">' . $event['host'] . '</span>
+                                <span class="event-type">A ' . $event['eventType_name'] . ',</span> <span>Hosted by</span> <span class="event-host">' . $event['host'] . '</span>
                             </div>
                             <div class="event-location"><span><a href="http://maps.google.com/?q=' . $event['location'] . '" target="_blank">' . $event['location'] . '</a></span></div>
                         </div>
@@ -176,7 +176,10 @@
                             </span>
                             <input list="events" type="text" name="type" id="ip-type" placeholder="What type of event is this?" required />
                             <datalist id="events">
-                                <option data-value="1" value="Party">
+                            <?php
+                            foreach($this->eventTypes as $type){
+                               print '<option data-value="' . $type['id'] . '" value="' . $type['name'] . '">'; 
+                            }?> 
                             </datalist>
                         </label>
                     </div>

@@ -7,8 +7,8 @@ defined("PUBLIC_PATH")
 // URL's
 // Needs to be changed to whatever the address where the folder is located
 // This can be either a domain i.g. www.domain.com or local i.g. localhost/foldername
-//define('URL', 'http://YOUR_PATH_HERE/'); 
-define('URL', 'http://event-planner.dev/'); 
+define('URL', 'http://YOUR_PATH_HERE/'); 
+//define('URL', 'http://event-planner.dev/'); 
 define('PUBLIC_URL', URL . 'public/');
 define('UPLOADS_URL', URL . 'data/uploads/');
 define('APP_URL', URL . 'app/');
@@ -22,5 +22,5 @@ define('DB_USER', 'root'); // your database username
 define('DB_PASS', 'mysql'); // your database password
 
 //Version
-define('VER', '2.0.1-Alpha');
+define('VER', '3.0.0-Alpha');
 define('PROJECT_NAME', 'Udacity: Event Planner');

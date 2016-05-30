@@ -2,7 +2,7 @@
 A basic event planner to showcase user experience.
 
 ## Version/Demo
-2.0.1-Alpha: Live Demo: [www.coreymontgomery.com](http://www.coreymontgomery.com).
+3.0.0-Alpha: Live Demo: [www.coreymontgomery.com](http://www.coreymontgomery.com).
 
 ---
 ## Objective
@@ -28,7 +28,6 @@ Local server or Live server: I currentlty use [AMPPS](http://www.ampps.com/). It
 ``` PHP
 define('URL', 'http://YOUR_PATH_HERE/'); 
 ```
-
 4. You will need to change the database login credentials in the dist/app/config.php file.
 ```PHP
 define('DB_TYPE', 'mysql');
