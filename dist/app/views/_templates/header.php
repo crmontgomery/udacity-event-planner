@@ -16,3 +16,18 @@
         <link href="<?php echo PUBLIC_URL  . 'css/stylesheet.css?' . date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div id="alert-container" data-alert-status="closed">
+            <div class="container">
+                <div class="text-center" id="alert-message">
+                    <span><i class="material-icons">error</i></span><span class="message"></span><span></span>
+                </div>
+                <div id="alert-menu">
+                    <ul class="ul-inline">
+                        <li><button type="button" id="btn-alert-prev" data-alert-arrow="prev"><i class="material-icons">keyboard_arrow_left</i></button></li>
+                        <li><span id="alert-current">2</span> of <span id="alert-total">2</span></li>
+                        <li><button type="button" id="btn-alert-next" data-alert-arrow="next"><i class="material-icons">keyboard_arrow_right</i></button></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>

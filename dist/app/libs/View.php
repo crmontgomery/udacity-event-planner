@@ -1,8 +1,9 @@
 <?php
 
 class View {
-
+	
 	function __construct() {
+		
 
 	}
 
@@ -10,7 +11,7 @@ class View {
 
 		$subMenu = substr($name, 0, strpos($name, '/'));
 		$subMenu .= '/sub-menu.php';
-
+		
 		if ($hideHeader != true && $hideMenu != true) {
 			require 'app/views/_templates/header.php';
 			require 'app/views/_templates/menu.php';

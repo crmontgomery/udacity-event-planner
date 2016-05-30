@@ -1,6 +1,13 @@
 // Reference: Breakpoints are from the Google Material Design Guidelines
 
 @media (max-width: 600px) {
+  
+  #btn-create-event {
+    span {
+      display: none;
+    }
+  }
+  
   #modal-event {
     height: 900px !important;
     .col-6-12 {

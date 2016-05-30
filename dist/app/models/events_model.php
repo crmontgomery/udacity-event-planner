@@ -11,6 +11,21 @@ class Events_Model extends Model {
      function createEvent()
     {
         try {
+            $typeId = null;
+            $eventTypeArray = $this->eventTypeExists(strtolower($_POST['type']));
+            
+            if($eventTypeArray['id'] == null){
+                $table = 'eventType';
+                $data = array(
+                        'name' => $_POST['type']
+                        );
+
+                $this->db->insert($table, $data);
+                $typeId = $this->db->lastInsertId();
+            } else {
+                $typeId = $eventTypeArray['id'];
+            }
+            
             $table = 'event';
             $data = array(
                     'name'          => $_POST['name'],
@@ -19,7 +34,7 @@ class Events_Model extends Model {
                     'endDateTime'   => $_POST['endDate'],
                     'location'      => $_POST['location'],
                     'message'       => $_POST['message'],
-                    'eventType'     => $_POST['type'],
+                    'eventType_id'  => $typeId,
                     'guests'        => $_POST['guests'],
                     'user_id'       => Session::get('userId')
                     );
@@ -38,11 +53,40 @@ class Events_Model extends Model {
     // Read
     function getEventsList()
     {
-        $sql = 'SELECT * FROM event';
+        $sql = 'SELECT a.*, b.name as eventType_name 
+                FROM event a 
+                INNER JOIN eventType b 
+                WHERE a.eventType_id = b.id';
+
+        return $this->db->select($sql);
+    }
+    
+    function getEventTypeList()
+    {
+        $sql = 'SELECT * FROM eventType';
 
         return $this->db->select($sql);
     }
   
     // Update
     // Delete
+    
+    // Misc
+    private function eventTypeExists($type)
+    {
+        $types = $this->getEventTypeList();
+        $return = array(
+                        'status' => false, 
+                        'id'     => null
+                        );
+
+        foreach($types as $item){
+            if($_POST['type'] == $item['name']){
+                $return['status'] = true;
+                $return['id'] = $item['id']; 
+            }
+        }
+        
+        return $return;
+    }
 }

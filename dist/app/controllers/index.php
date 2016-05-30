@@ -27,7 +27,12 @@ class Index extends Controller
 	{
 		$this->view->title = $this->className;
         $this->view->eventsList = $this->events_model->getEventsList();
+        $this->view->eventTypes = $this->events_model->getEventTypeList();
 		$this->view->render($this->className . '/index');
+        
+        // Errors are available!
+        // $this->_controller = new Error();
+        // $this->_controller->index($msg);
 	}
     
     function login()
@@ -36,7 +41,7 @@ class Index extends Controller
     }
     
     // Create 
-    function createEvent()
+    function _createEvent()
     {
         echo Session::get('userId');
         $this->events_model->createEvent();

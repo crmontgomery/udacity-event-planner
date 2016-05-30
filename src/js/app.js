@@ -107,6 +107,12 @@ var toggleModal = function(modal) {
 // Modal close options
 $('#btn-modal-close, #btn-modal-cancel, #modal-overlay').on('click', function(){
     var modal = $(this).attr('data-modal');
+    $('#' + modal + ' #label-validation span').each(function(){
+        if($(this).hasClass('pass')){
+            $(this).removeClass('pass');
+            $(this).addClass('fail');
+        }
+    });
     toggleModal(modal);
 });
 
@@ -192,6 +198,7 @@ var togglePass = function(item, valid){
         $(item).addClass('pass');
     }
 }
+
 
 
 

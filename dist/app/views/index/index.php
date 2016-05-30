@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-12-12 event-meta">
                             <div class="event-type-host">
-                                <span class="event-type">A ' . $event['eventType'] . ',</span> <span>Hosted by</span> <span class="event-host">' . $event['host'] . '</span>
+                                <span class="event-type">A ' . $event['eventType_name'] . ',</span> <span>Hosted by</span> <span class="event-host">' . $event['host'] . '</span>
                             </div>
                             <div class="event-location"><span><a href="http://maps.google.com/?q=' . $event['location'] . '" target="_blank">' . $event['location'] . '</a></span></div>
                         </div>
@@ -139,7 +139,7 @@
     <!-- TODO: only print this code if the user is loged in -->
     <?php $modalName = 'modal-event';?>
     <div id="<?=$modalName;?>">
-        <form action="<?=URL;?>index/createEvent" method="post" id="form-new-event">
+        <form action="<?=URL;?>index/_createEvent" method="post" id="form-new-event">
             <div class="" id="modal-header">
                 <span id="modal-title">Create a new event</span>
                 <span id="modal-close"><button type="button" id="btn-modal-close" data-modal="<?=$modalName;?>"><i class="material-icons">close</i></button></span>
@@ -174,7 +174,13 @@
                             <span class="float-right" id="label-validation">
                                 <span class="fail">!</span>
                             </span>
-                            <input type="text" name="type" id="ip-type" placeholder="What type of event is this?" required />
+                            <input list="events" type="text" name="type" id="ip-type" placeholder="What type of event is this?" required />
+                            <datalist id="events">
+                            <?php
+                            foreach($this->eventTypes as $type){
+                               print '<option data-value="' . $type['id'] . '" value="' . $type['name'] . '">'; 
+                            }?> 
+                            </datalist>
                         </label>
                     </div>
                     <div class="col-6-12 reset">
@@ -276,7 +282,7 @@
                             <span class="fail" id="lower">a</span>
                             <span class="fail" id="num">0-9</span>
                             <span class="fail" id="symbol">!&?</span> 
-                            <span class="fail" id="length">16+</span>
+                            <span class="fail" id="length">6+</span>
                         </span>
                         <input type="password" name="password" id="ip-user-pass" placeholder="Super Password" required/>
                     </label>
